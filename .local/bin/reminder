@@ -1,0 +1,7 @@
+#!/bin/sh
+
+while true
+do
+  notify-send -t 300000 'REMINDER!!!' 'Drink water\nWalk around a bit\nAnd remind yourself of the reason you made this'
+  sleep 30m
+done

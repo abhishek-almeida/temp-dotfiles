@@ -1,0 +1,4 @@
+#!/bin/sh
+word=$(:|dmenu -p "Enter word")
+notify-send -t 50000 "$(dict $(echo $word))"
+

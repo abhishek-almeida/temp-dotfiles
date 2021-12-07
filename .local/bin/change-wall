@@ -1,0 +1,2 @@
+  #!/bin/sh
+  xwallpaper --zoom "$(ls -d /home/fren/Pictures/wall/* | shuf -n 1)"

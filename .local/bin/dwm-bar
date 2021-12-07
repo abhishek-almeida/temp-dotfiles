@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while true; do
+  mem="$(free -h | grep Mem | awk '{print $3 " / "$2}')"
+  load="$(uptime | awk '{print $9 $10 $11 }' | sed ' s/,/ - /g')"
+  date="$(date '+%d %b %Y [%a] - %r')"
+  xsetroot -name "🍪 $mem 📊 $load 📅 $date "
+  sleep 1
+done
+

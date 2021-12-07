@@ -1,0 +1,11 @@
+#!/bin/sh
+file="$HOME/.config/qutebrowser/config.py"
+mode=$(grep darkmode $file | awk '{print $2}' | tr -d ")")
+
+if [ "$mode" = "True" ]; then
+  sed -i 's/True/False/' $file
+  notify-send -t 5000 "qb theme: light"
+else
+  sed -i 's/False/True/' $file
+  notify-send -t 5000 "qb theme: dark"
+fi

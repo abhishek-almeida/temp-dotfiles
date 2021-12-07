@@ -1,0 +1,5 @@
+config.load_autoconfig(True)
+config.set("colors.webpage.darkmode.enabled", True)
+config.bind("ZD", "spawn dark-qb")
+config.bind("z", "hint links spawn mpv --ytdl-format=18 {hint-url}")
+# config.bind("z", "hint links spawn mpv {hint-url}")

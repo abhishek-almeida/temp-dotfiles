@@ -1,0 +1,9 @@
+#!/bin/sh
+config=$HOME/.config/redshift.conf
+chosen=$(echo -e "day\nnight" | dmenu -p "mode:")
+[ -z "$chosen" ] && exit
+mode="brightness-$chosen"
+level=$(: | dmenu -p "level:")
+sed -i "s/$mode.*/$mode=$level/" $config
+pkill redshift
+redshift &

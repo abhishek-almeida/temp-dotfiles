@@ -1,0 +1,5 @@
+#!/bin/sh
+emoji=$(cat $HOME/Downloads/emoji-list | dmenu -i -l 20 | awk '{print $1}')
+[ -z "$emoji" ] && exit
+echo $emoji | xclip -r -selection clipboard
+notify-send -t 5000 "$emoji copied to clipboard"

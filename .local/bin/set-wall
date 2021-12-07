@@ -1,0 +1,6 @@
+#!/bin/sh
+while true
+do
+  xwallpaper --zoom "$(ls -d /home/fren/Pictures/wall/* | shuf -n 1)"
+  sleep 5m
+done

@@ -1,0 +1,4 @@
+#!/bin/sh
+ans=$(echo -e "No\nYes"|dmenu -p "You sure you wanna exit?")
+[ -z "$ans" ] && exit
+[[ $ans == "Yes" ]] && pkill -KILL -u $USER
