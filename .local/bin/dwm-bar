@@ -2,7 +2,8 @@
 
 while true; do
   mem="$(free -h | grep Mem | awk '{print $3 " / "$2}')"
-  load="$(uptime | awk '{print $9 $10 $11 }' | sed ' s/,/ - /g')"
+  #load="$(uptime | awk '{print $9 $10 $11 }' | sed ' s/,/ - /g')"
+  load="$(cat /proc/loadavg | awk '{printf ("%s - %s - %s", $1, $2, $3)}')"
   date="$(date '+%d %b %Y [%a] - %r')"
   xsetroot -name "🍪 $mem 📊 $load 📅 $date "
   sleep 1
